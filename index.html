@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script data-main="app" src="lib/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Graph search</h1>
+      <h2>Turtle</h2>
+      <form role="form">
+        <div class="form-group">
+          <textarea id="turtle" class="form-control">@base <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rel: <http://www.perceive.net/schemas/relationship/> .
+
+<#green-goblin>
+    rel:enemyOf <#spiderman> ;
+    a foaf:Person ;    # in the context of the Marvel universe
+    foaf:name "Green Goblin" .
+
+<#spiderman>
+    rel:enemyOf <#green-goblin> ;
+    a foaf:Person ;
+    foaf:name "Spiderman", "Человек-паук"@ru .
+</textarea>
+        </div>
+        <input type="button" class="btn btn-primary" id="btn-parse" value="スタート">
+      </form>
+      <h2>Graph</h2>
+      <div id="graph"></div>
+      <h2>Search Result</h2>
+    </div>
+  </body>
+</html>
